@@ -48,7 +48,7 @@ pub async fn show_book_list(
 
 pub async fn show_book(
     Path(book_id): Path<Uuid>,
-    State(registry): State<AppRegistry>
+    State(registry): State<AppRegistry>,
 ) -> Result<Json<BookResponse>, AppError> {
     registry
         .book_repository()
