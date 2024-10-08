@@ -5,6 +5,15 @@ version = 3
 [[package]]
 name = "adapter"
 version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "derive-new",
+ "kernel",
+ "shared",
+ "sqlx",
+ "uuid",
+]
 
 [[package]]
 name = "addr2line"
@@ -64,6 +73,10 @@ checksum = "86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6"
 [[package]]
 name = "api"
 version = "0.1.0"
+dependencies = [
+ "axum",
+ "registry",
+]
 
 [[package]]
 name = "async-trait"
@@ -318,6 +331,17 @@ dependencies = [
  "const-oid",
  "pem-rfc7468",
  "zeroize",
+]
+
+[[package]]
+name = "derive-new"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d150dea618e920167e5973d70ae6ece4385b7164e0d799fe7c122dd0a5d912ad"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.79",
 ]
 
 [[package]]
@@ -726,6 +750,12 @@ dependencies = [
 [[package]]
 name = "kernel"
 version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "shared",
+ "uuid",
+]
 
 [[package]]
 name = "lazy_static"
@@ -1060,6 +1090,10 @@ dependencies = [
 [[package]]
 name = "registry"
 version = "0.1.0"
+dependencies = [
+ "adapter",
+ "kernel",
+]
 
 [[package]]
 name = "rsa"
@@ -1113,7 +1147,9 @@ dependencies = [
  "adapter",
  "anyhow",
  "api",
+ "async-trait",
  "axum",
+ "derive-new",
  "registry",
  "shared",
  "sqlx",
@@ -1211,6 +1247,9 @@ dependencies = [
 [[package]]
 name = "shared"
 version = "0.1.0"
+dependencies = [
+ "anyhow",
+]
 
 [[package]]
 name = "shlex"
@@ -1759,6 +1798,10 @@ name = "uuid"
 version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "81dfa00651efa65069b0b6b651f4aaa31ba9e3c3ce0137aaad053604ee7e0314"
+dependencies = [
+ "getrandom",
+ "serde",
+]
 
 [[package]]
 name = "vcpkg"
